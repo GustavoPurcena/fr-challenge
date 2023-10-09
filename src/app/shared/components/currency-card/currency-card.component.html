@@ -3,8 +3,27 @@
         {{ currencyTitle }}
     </div>
 
-    <div *ngIf="loading" class="loading-content">
-        <img src="../../../../../assets/loader.svg" alt="loader spinner" class="loader"/>
+    <div *ngIf="loading; else loadedContent" class="loading-content">
+        <img src="../../../../../assets/loader.svg" alt="loader spinner" class="loader" />
     </div>
 
+    <ng-template #loadedContent>
+        <div *ngIf="currency; else failedContent" class="card-body">
+            {{currency.bid}}
+            <div>
+                {{currency.create_date | timeFormat }}
+            </div>
+        </div>
+        <ng-template #failedContent>
+            <div class="failed-body">
+                <div class="failed-text">
+                    Algo deu errado
+                </div>
+
+                <button class="failed-button" (click)="reloadCurrency()">
+                    Recarregar
+                </button>
+            </div>
+        </ng-template>
+    </ng-template>
 </div>

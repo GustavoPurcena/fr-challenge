@@ -1,3 +1,9 @@
+.anchor {
+    display: block;
+    padding-top: 50px;
+    visibility: hidden;
+}
+
 .landing-page {
     display: flex;
     flex-direction: row;
@@ -8,6 +14,10 @@
 }
 
 @media (max-width: 992px) {
+    .anchor {
+        padding-top: 100px;
+    }
+
     .landing-page {
         height: unset;
         flex-direction: column;

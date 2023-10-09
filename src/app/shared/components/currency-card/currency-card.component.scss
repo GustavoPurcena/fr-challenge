@@ -34,6 +34,35 @@
             height: 100px;
         }
     }
+
+    .failed-body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 24px;
+        height: calc(100% - 120px);
+        font-style: normal;
+        
+        .failed-text {
+            font-size: 26px;
+            font-weight: 400;
+            color: $basic-text;
+        }
+
+        .failed-button {
+            background-color: $button-background-gray;
+            border: unset;
+            border-radius: 10px;
+            color: $basic-text;
+            font-size: 18px;
+            font-weight: 600;
+            line-height: normal;
+            height: 58px;
+            text-align: center;
+            width: 173px;
+        }
+    }
 }
 
 @media (max-width: 1400px) {
