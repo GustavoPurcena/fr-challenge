@@ -17,6 +17,7 @@ import { CurrencyCardComponent } from './components/currency-card/currency-card.
     CommonModule,
     RouterModule,
     HttpClientModule,
+    CurrencyCardComponent
   ]
 })
 export class SharedModule { }

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-currency-card',
@@ -6,5 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./currency-card.component.scss']
 })
 export class CurrencyCardComponent {
+
+  loading: boolean = true;
+  @Input() currencyTitle: any;
 
 }

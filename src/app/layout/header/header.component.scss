@@ -1,9 +1,12 @@
+@import '../../../styles/colors';
+
 .header {
     height: 100px;
-    background-color: #fff;
+    background-color: $white;
     display: flex;
     flex-direction: row;
     justify-content: center;
+    width: 100%;
 }
 
 .logo {
