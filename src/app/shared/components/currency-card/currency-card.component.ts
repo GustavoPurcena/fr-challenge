@@ -2,8 +2,6 @@ import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { CurrencyService } from '@app/core/services/currency.service';
 import { Observable, Subscription, interval, of, timer } from 'rxjs';
 import {
-  catchError,
-  finalize,
   startWith,
   switchMap,
   tap,
@@ -35,6 +33,11 @@ export class CurrencyCardComponent implements OnInit, OnDestroy {
   @Input() currencyTitle!: string;
   @Input() currencyCode!: string;
   currency!: CurrencyExchange;
+  currencyColors: Record<string, string> = {
+    red: '#dd4b4b',
+    green: '#3c7649',
+    blue: '#3684cb',
+  };
 
   constructor(private currencyService: CurrencyService) {}
 
@@ -47,24 +50,24 @@ export class CurrencyCardComponent implements OnInit, OnDestroy {
   }
 
   fetchCurrencyExchange() {
-    // check every 60 seconds for new data (it will only fetch if data is not cached or older than 3 minutes)
-    this.timerSubscription = interval(6000)
+    // check every 3 minutes for new data (will only fetch if data is not cached or older than 3 minutes)
+    this.timerSubscription = interval(180000)
       .pipe(
         startWith(0),
         switchMap(() => {
           // Check if data is cached before setting loading to true
           this.loading =
-            this.currencyService.getFromCache(this.currencyCode) === null;
+            this.currencyService.getFromCache(this.currencyCode) !== null;
           return this.currencyService.fetchData(this.currencyCode);
         })
       )
       .subscribe({
         next: (data) => {
+          // deal with fetch's response to avoid type errors
           this.currency = data.hasOwnProperty(`${this.currencyCode}BRL`)
             ? data[`${this.currencyCode}BRL`]
             : data;
-          console.log(this.currency);
-		  console.log(this.loading)
+			console.log(this.currency);
           this.loading = false;
         },
         error: (error) => {
@@ -77,6 +80,19 @@ export class CurrencyCardComponent implements OnInit, OnDestroy {
   reloadCurrency() {
     this.loading = true;
     this.fetchCurrencyExchange();
+  }
+
+  getCurrencyColor(value: string): string {
+    const parsedValue = parseFloat(value);
+
+    if (parsedValue <= 1) {
+      return this.currencyColors['red'];
+    }
+    if (parsedValue > 1 && parsedValue <= 5) {
+      return this.currencyColors['green'];
+    }
+    // parsedValue > 5
+    return this.currencyColors['blue'];
   }
 
   log(data: any) {

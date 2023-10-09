@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { CurrencyCardComponent } from '@app/shared/components/currency-card/currency-card.component';
 
 @Component({
   selector: 'landing-page',

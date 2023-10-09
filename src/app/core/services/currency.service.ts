@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable, of, timer } from 'rxjs';
+import { Observable, of } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
-import { switchMap, shareReplay, catchError, tap } from 'rxjs/operators';
+import { tap } from 'rxjs/operators';
 import { CurrencyExchange } from '@app/shared/components/currency-card/currency-card.component';
 
 const currencyAPI: string = 'https://economia.awesomeapi.com.br/last/';

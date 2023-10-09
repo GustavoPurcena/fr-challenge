@@ -9,9 +9,28 @@
 
     <ng-template #loadedContent>
         <div *ngIf="currency; else failedContent" class="card-body">
-            {{currency.bid}}
-            <div>
-                {{currency.create_date | timeFormat }}
+            <div class="exchange-container">
+                <span [ngStyle]="{'color': getCurrencyColor(currency.bid) }">
+                    {{currency.bid | currency: 'BRL'}}
+                </span>
+            </div>
+            <div class="card-footer">
+                <div class="footer-info first">
+                    <span class="info-title">
+                        Variação (%)
+                    </span>
+                    <span class="info-value">
+                        {{ (currency.pctChange | number: '1.2-2')?.toString()?.replace(".", ",") }}
+                    </span>
+                </div>
+                <div class="footer-info">
+                    <span class="info-title">
+                        Atualizado
+                    </span>
+                    <span class="info-value">
+                        {{currency.create_date | timeFormat }}
+                    </span>
+                </div>
             </div>
         </div>
         <ng-template #failedContent>

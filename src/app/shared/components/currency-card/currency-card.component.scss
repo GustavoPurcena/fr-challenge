@@ -1,6 +1,5 @@
 @import '../../../../styles/colors';
 
-
 .card {
     background-color: $white;
     border-radius: 10px;
@@ -63,6 +62,61 @@
             width: 173px;
         }
     }
+
+    .card-body {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        height: calc(100% - 120px);
+
+        .exchange-container {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            font-size: 64px;
+            font-style: normal;
+            font-weight: 500;
+        }
+
+        .card-footer {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            height: 110px;
+            border-top: 0.5px solid $border-gray;
+            width: 100%;
+
+            .footer-info {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                font-style: normal;
+                height: 100%;
+                width: 50%;                
+
+                .info-title {
+                    font-size: 18px;
+                    font-weight: 600;
+                    color: $secondary-text;
+                    
+                }
+
+                .info-value {
+                    font-size: 24px;
+                    font-weight: 600;
+                    color: $basic-text;
+                }
+
+                &.first {
+                    border-right: 0.5px solid $border-gray;
+                }
+            }
+        }
+    }
 }
 
 @media (max-width: 1400px) {
@@ -77,6 +131,32 @@
 
         .loading-content {
             height: calc(100% - 108px);
+        }
+
+        .failed-body {
+            height: calc(100% - 108px);
+        }
+
+        .card-body {
+            height: calc(100% - 108px);
+
+            .exchange-container {
+                font-size: 60px;
+            }
+
+            .card-footer {
+                height: 100px;
+
+                .footer-info {
+                    .info-title {
+                        font-size: 16px;
+                    }
+
+                    .info-value {
+                        font-size: 22px;
+                    }
+                }
+            }
         }
     }
 }
@@ -93,6 +173,42 @@
 
         .loading-content {
             height: calc(100% - 96px);
+        }
+
+        .failed-body {
+            height: calc(100% - 96px);
+
+            .failed-text {
+                font-size: 24px;
+            }
+
+            .failed-button {
+                font-size: 16px;
+                height: 48px;
+                width: 150px;
+            }
+        }
+
+        .card-body {
+            height: calc(100% - 96px);
+
+            .exchange-container {
+                font-size: 52px;
+            }
+
+            .card-footer {
+                height: 90px;
+
+                .footer-info {
+                    .info-title {
+                        font-size: 14px;
+                    }
+
+                    .info-value {
+                        font-size: 20px;
+                    }
+                }
+            }
         }
     }
 }
