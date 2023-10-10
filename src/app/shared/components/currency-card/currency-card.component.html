@@ -11,7 +11,7 @@
         <div *ngIf="currency; else failedContent" class="card-body">
             <div class="exchange-container">
                 <span [ngStyle]="{'color': getCurrencyColor(currency.bid) }">
-                    {{currency.bid | currency: 'BRL'}}
+                    {{(currency.bid | currency: 'BRL')?.toString()?.replace(".", ",") }}
                 </span>
             </div>
             <div class="card-footer">

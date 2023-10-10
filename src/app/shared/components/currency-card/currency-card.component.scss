@@ -10,6 +10,8 @@
 
     .card-header {
         background-color: $card-header-gray;
+        border-top-right-radius: 10px;
+        border-top-left-radius: 10px;
         height: 120px;
         width: 100%;
         font-size: 30px;
