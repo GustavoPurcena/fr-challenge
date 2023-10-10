@@ -4,10 +4,12 @@ import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { CurrencyCardComponent } from './components/currency-card/currency-card.component';
 import { TimeFormatPipe } from '@app/core/pipes/time-format.pipe';
+import { HeaderComponent } from './components/header/header.component';
 
 @NgModule({
   declarations: [
     CurrencyCardComponent,
+    HeaderComponent,
     TimeFormatPipe,
   ],
   imports: [
@@ -19,7 +21,8 @@ import { TimeFormatPipe } from '@app/core/pipes/time-format.pipe';
     CommonModule,
     RouterModule,
     HttpClientModule,
-    CurrencyCardComponent
+    CurrencyCardComponent,
+    HeaderComponent,
   ]
 })
 export class SharedModule { }

@@ -1,11 +1,7 @@
 import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { CurrencyService } from '@app/core/services/currency.service';
 import { Observable, Subscription, interval, of, timer } from 'rxjs';
-import {
-  startWith,
-  switchMap,
-  tap,
-} from 'rxjs/operators';
+import { startWith, switchMap, tap } from 'rxjs/operators';
 
 export type CurrencyExchange = {
   code: string;
@@ -67,7 +63,6 @@ export class CurrencyCardComponent implements OnInit, OnDestroy {
           this.currency = data.hasOwnProperty(`${this.currencyCode}BRL`)
             ? data[`${this.currencyCode}BRL`]
             : data;
-			console.log(this.currency);
           this.loading = false;
         },
         error: (error) => {
@@ -93,9 +88,5 @@ export class CurrencyCardComponent implements OnInit, OnDestroy {
     }
     // parsedValue > 5
     return this.currencyColors['blue'];
-  }
-
-  log(data: any) {
-    console.log(data);
   }
 }

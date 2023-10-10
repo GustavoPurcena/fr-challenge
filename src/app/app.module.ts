@@ -7,7 +7,7 @@ import { SharedModule } from '@shared/shared.module';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LandingPageComponent } from './core/pages/landing-page/landing-page.component';
-import { HeaderComponent } from './layout/header/header.component';
+import { HeaderComponent } from './shared/components/header/header.component';
 import { LocationStrategy, PathLocationStrategy } from '@angular/common';
 
 @NgModule({
