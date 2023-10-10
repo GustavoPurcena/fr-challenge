@@ -15,38 +15,38 @@ This project is built using the following technologies:
 
 1. Ensure you have **Node.js** installed. If not, download and install it from [Node.js official website](https://nodejs.org/).
 2. Clone this repository:
-\```bash
-git clone <repository_url>
-\```
+```bash
+git clone <https://github.com/GustavoPurcena/fr-challenge>
+```
 3. Navigate to the project directory:
-\```bash
+```bash
 cd fr-challenge
-\```
+```
 4. Install all the necessary dependencies:
-\```bash
+```bash
 npm install
-\```
+```
 
 ## 🖥️ Running the Application
 
 1. To run the application in development mode:
-\```bash
+```bash
 npm start
-\```
+```
 This will start the application and open it in your default web browser. If it doesn't open automatically, you can access it at [http://localhost:4200/](http://localhost:4200/).
 
 2. To build the application:
-\```bash
+```bash
 npm run build
-\```
+```
 3. To continuously watch and rebuild the application during development:
-\```bash
+```bash
 npm run watch
-\```
+```
 4. To run tests:
-\```bash
+```bash
 npm test
-\```
+```
 
 ## 📝 Notes
 
