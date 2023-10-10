@@ -16,7 +16,7 @@ This project is built using the following technologies:
 1. Ensure you have **Node.js** installed. If not, download and install it from [Node.js official website](https://nodejs.org/).
 2. Clone this repository:
 ```bash
-git clone <https://github.com/GustavoPurcena/fr-challenge>
+git clone https://github.com/GustavoPurcena/fr-challenge
 ```
 3. Navigate to the project directory:
 ```bash
