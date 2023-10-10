@@ -11,7 +11,7 @@ import { HeaderComponent } from './shared/components/header/header.component';
 import { LocationStrategy, PathLocationStrategy } from '@angular/common';
 
 @NgModule({
-  declarations: [AppComponent, LandingPageComponent, HeaderComponent],
+  declarations: [AppComponent, LandingPageComponent],
   imports: [
     AppRoutingModule,
     BrowserModule,
